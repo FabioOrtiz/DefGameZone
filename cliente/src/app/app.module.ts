@@ -10,6 +10,8 @@ import { UserRegisterComponent } from './components/user-register/user-register.
 import { GameListComponent } from './components/game-list/game-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsersService } from './services/users.service';
+import { LibraryComponent } from './components/library/library.component';
+import { CentralComponent } from './components/central/central.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { UsersService } from './services/users.service';
     NavigationComponent,
     UserRegisterComponent,
     GameListComponent,
-    LoginComponent
+    LoginComponent,
+    LibraryComponent,
+    CentralComponent
   ],
   imports: [
     BrowserModule,

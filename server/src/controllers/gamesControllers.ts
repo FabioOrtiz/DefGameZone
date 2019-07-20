@@ -11,6 +11,22 @@ class GamesController{
         });
     }
 
+    public async getOne(req: Request, res: Response): Promise<any> {
+        const { id } = req.params;
+        await pool.query('SELECT * FROM user WHERE nick = ?', [id], function(err, result, fields){
+            if(err) throw err;
+            res.json(result);
+        });
+    }
+
+    public async getRegister(req: Request, res: Response): Promise<any> {
+        const { id, pass } = req.params;
+        await pool.query('SELECT * FROM user WHERE nick = ? and password= ? ', [id,pass], function(err, result, fields){
+            if(err) throw err;
+            res.json(result);
+        });
+    }
+
     public async create (req: Request, res: Response): Promise<void>{
         await pool.query('INSERT INTO user set ?', [req.body]);
         res.json({message: 'User Saved'});

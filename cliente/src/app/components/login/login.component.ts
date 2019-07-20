@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../../models/User';
 import { UsersService} from '../../services/users.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,17 +11,28 @@ import { UsersService} from '../../services/users.service';
 })
 export class LoginComponent implements OnInit {
 
-  users: any = [];
+  user: User ={
+    nick: '',
+    mail: '',
+    password: ''
+  };
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService, private router: Router, private route: ActivatedRoute) { 
+
+  }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(
-      res => {
-        this.users = res;
+    //this.user.nick=this.route.snapshot.paramMap.get('id');
+  }
+
+  checkRegister(){
+    this.userService.checkUser(this.user.nick,this.user.password).subscribe(
+      res=>{
+        console.log(res);
+        this.router.navigate(['./library/',this.user.nick]);
       },
-      err => console.log(err)
-    );
+      err => console.error(err)
+    )
   }
 
 }

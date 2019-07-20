@@ -22,6 +22,26 @@ class GamesController {
             });
         });
     }
+    getOne(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('SELECT * FROM user WHERE nick = ?', [id], function (err, result, fields) {
+                if (err)
+                    throw err;
+                res.json(result);
+            });
+        });
+    }
+    getRegister(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id, pass } = req.params;
+            yield database_1.default.query('SELECT * FROM user WHERE nick = ? and password= ? ', [id, pass], function (err, result, fields) {
+                if (err)
+                    throw err;
+                res.json(result);
+            });
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO user set ?', [req.body]);

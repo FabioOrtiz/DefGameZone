@@ -24,6 +24,12 @@ export class UsersService {
     return this.http.post(`${this.API}/user`, user);
   }
 
+  //Verificar la existencia del usuario
+
+  checkUser(id: string, pass: string){
+    return this.http.get(`${this.API}/user/${id}/${pass}`);
+  }
+
 
   //Eliminar (diria que tambien falta el respectivo en el folder server)
 

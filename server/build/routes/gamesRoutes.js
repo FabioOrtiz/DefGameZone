@@ -14,6 +14,8 @@ class GamesRoutes {
         this.router.get('/', gamesControllers_1.default.list);
         this.router.post('/', gamesControllers_1.default.create);
         this.router.put('/:id', gamesControllers_1.default.update);
+        this.router.get('/:id', gamesControllers_1.default.getOne);
+        this.router.get('/:id/:pass', gamesControllers_1.default.getRegister);
     }
 }
 const gamesRoutes = new GamesRoutes();

@@ -1,19 +1,25 @@
-<div class="mostrar" *ngFor="let user of users">
-    <h3>
-        Nombre
-    </h3>
-    {{user.nick}}
-    <br>
+<div id="allPage">
+    <div id="pageContent">
+        <div id="pageSubContent">
+            <div id="logInForm">
+                <form>
+                    <input type="text" [(ngModel)]="user.nick" placeholder="Ingresar nombre de Usuario" name="nick">
+                    <input type="text" [(ngModel)]="user.password" placeholder="Ingresar Contraseña" name="password">
+                </form>
+            </div>
+        </div>
+        <div id="bottomMenu">
+            <button id="guest" routerLink="/central">
+                Jugar como invitado
+            </button>
 
-    <h3>
-        mail
-    </h3>
-    {{user.mail}}
-    <br>
-    <h3>
+            <button id="send" (click)="checkRegister()">
+                Ingresar
+            </button>
 
-        password
-    </h3>
-    {{user.password}}
-    <br>
+            <button id="registration" routerLink="/register">
+                Registrarse
+            </button>
+        </div>
+    </div>
 </div>
