@@ -1,0 +1,16 @@
+<form>
+    <div>
+        <input type="text" [(ngModel)]="user.nick" placeholder="nick" name="nick">
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="user.mail" placeholder="mail" name="mail">
+    </div>
+
+    <div>
+        <input type="text" [(ngModel)]="user.password" placeholder="password" name="password">
+    </div>
+
+    <button (click)="saveNewUser()">
+        Enviar
+    </button>
+</form>
