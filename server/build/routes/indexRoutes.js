@@ -1,3 +1,5 @@
+// I know says index but is for games, real sorry for that
+
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
@@ -8,7 +10,12 @@ class IndexRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', indexController_1.indexController.index);
+        this.router.get('/:id', indexController_1.indexController.getIDs);
+        this.router.get('/:id', indexController_1.indexController.getGameIDs);
+        this.router.get('/:id', indexController_1.indexController.getNameGame);
+        this.router.post('/', indexController_1.indexController.addGame);
+        this.router.delete('/:id', indexController_1.indexController.deleteGame);
+        this.router.put('/:id/:idg', indexController_1.indexController.maxScore);
     }
 }
 const indexRoutes = new IndexRoutes();
