@@ -4,7 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { LibraryComponent } from './components/library/library.component';
 import {CentralComponent} from './components/central/central.component';
-
+import {SettingsComponent} from './components/settings/settings.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'central',
     component: CentralComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
   }
 ];
 

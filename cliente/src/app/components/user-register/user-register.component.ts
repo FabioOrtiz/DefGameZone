@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/User';
 import { UsersService} from '../../services/users.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-register',
@@ -15,7 +16,7 @@ export class UserRegisterComponent implements OnInit {
     password: ''
   };
 
-  constructor(private userService: UsersService) { 
+  constructor(private userService: UsersService, private router: Router) { 
 
   }
 
@@ -25,6 +26,7 @@ export class UserRegisterComponent implements OnInit {
     this.userService.saveUser(this.user).subscribe(
       res=>{
         console.log(res);
+        this.router.navigate(['./login']);
       },
       err => console.error(err)
     )

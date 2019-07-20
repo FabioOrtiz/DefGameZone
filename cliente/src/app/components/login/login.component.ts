@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/User';
 import { UsersService} from '../../services/users.service';
-import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,13 +16,11 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private userService: UsersService, private router: Router, private route: ActivatedRoute) { 
+  constructor(private userService: UsersService, private router: Router) { 
 
   }
 
-  ngOnInit() {
-    //this.user.nick=this.route.snapshot.paramMap.get('id');
-  }
+  ngOnInit() {}
 
   checkRegister(){
     this.userService.checkUser(this.user.nick,this.user.password).subscribe(
