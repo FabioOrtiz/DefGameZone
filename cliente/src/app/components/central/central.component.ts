@@ -8,23 +8,10 @@ import { GamesServiceService } from '../../services/games-service.service';
 export class CentralComponent implements OnInit {
 
   games: any =[];
-  idBasic: any;
+  
   constructor(private gameService: GamesServiceService) { }
 
-  ngOnInit() {//FALTA DATO
-    this.gameService.getRegisteredUser().subscribe(
-      res => {
-        this.idBasic = res;
-        this.gameService.getGameIDsUser(this.idBasic).subscribe(
-          res =>{
-            this.games = res;
-          },
-          err => console.log()
-        );
-      },
-      err => console.log()
-    );
-  }
+  ngOnInit() {}
 
 
 

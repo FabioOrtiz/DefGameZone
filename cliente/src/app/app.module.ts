@@ -13,6 +13,7 @@ import { UsersService } from './services/users.service';
 import { LibraryComponent } from './components/library/library.component';
 import { CentralComponent } from './components/central/central.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { GameComponent} from './components/game/game.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     LoginComponent,
     LibraryComponent,
     CentralComponent,
-    SettingsComponent
+    SettingsComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

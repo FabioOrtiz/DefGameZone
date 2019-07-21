@@ -1,6 +1,26 @@
 <p>
     ENTER
 </p>
+<div class="mostrar" *ngFor="let game of games">
+    <h3>
+        ID
+    </h3>
+    {{game.id}}
+    <br>
+
+    <h3>
+        NAME
+    </h3>
+    {{game.name}}
+    <br>
+    <h3>
+        DESCRIPTION
+    </h3>
+    {{game.description}}
+    <br>
+</div>
+
+<!--
 <div class="mostrar" *ngFor="let user of users">
     <h3>
         Nombre
@@ -20,11 +40,10 @@
     {{user.password}}
     <br>
 </div>
-
-<button routerLink="/central">
+-->
+<button routerLink="/central/{{direction}}">
     Central
 </button>
-
-<button routerLink="/settings">
-    Ajustes
+<button routerLink="/login">
+    Cerrar Sesion
 </button>

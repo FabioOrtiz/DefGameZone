@@ -26,7 +26,7 @@ const routes: Routes = [
     component: LibraryComponent
   },
   {
-    path: 'central',
+    path: 'central/:id',
     component: CentralComponent
   },
   {
