@@ -1,5 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
+var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -22,7 +22,7 @@ class Server {
         this.app.use(express_1.default.urlencoded({ extended: false })); //Formulario
     }
     routes() {
-        this.app.use(indexRoutes_1.default);
+        this.app.use('/games', indexRoutes_1.default);
         this.app.use('/user', gamesRoutes_1.default);
     }
     start() {

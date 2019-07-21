@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  userR: any;
+
   constructor(private userService: UsersService, private router: Router) { 
 
   }
@@ -25,8 +27,14 @@ export class LoginComponent implements OnInit {
   checkRegister(){
     this.userService.checkUser(this.user.nick,this.user.password).subscribe(
       res=>{
-        console.log(res);
-        this.router.navigate(['./library/',this.user.nick]);
+        this.userR = res;
+        if(this.userR.length==0)
+        {
+          console.log("Match Error")
+        }
+        else{
+          this.router.navigate(['./library/',this.user.nick]);
+        }
       },
       err => console.error(err)
     )

@@ -10,9 +10,9 @@ class IndexRoutes {
         this.config();
     }
     config() {
-        this.router.get('/:id', indexController_1.indexController.getIDs);
-        this.router.get('/:id', indexController_1.indexController.getGameIDs);
-        this.router.get('/:id', indexController_1.indexController.getNameGame);
+        this.router.get('/:id/0', indexController_1.indexController.getIDs);
+        this.router.get('/:id/1', indexController_1.indexController.getGameIDs);
+        this.router.get('/:id/2', indexController_1.indexController.getNameGame);
         this.router.post('/', indexController_1.indexController.addGame);
         this.router.delete('/:id', indexController_1.indexController.deleteGame);
         this.router.put('/:id/:idg', indexController_1.indexController.maxScore);

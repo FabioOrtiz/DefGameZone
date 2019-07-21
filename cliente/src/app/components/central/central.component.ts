@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GamesServiceService } from '../../services/games-service.service';
 @Component({
   selector: 'app-central',
   templateUrl: './central.component.html',
@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CentralComponent implements OnInit {
 
-  constructor() { }
+  games: any =[];
+  idBasic: any;
+  constructor(private gameService: GamesServiceService) { }
 
-  ngOnInit() {
+  ngOnInit() {//FALTA DATO
+    this.gameService.getRegisteredUser().subscribe(
+      res => {
+        this.idBasic = res;
+        this.gameService.getGameIDsUser(this.idBasic).subscribe(
+          res =>{
+            this.games = res;
+          },
+          err => console.log()
+        );
+      },
+      err => console.log()
+    );
   }
+
+
 
 }
