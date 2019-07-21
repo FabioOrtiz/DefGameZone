@@ -5,6 +5,8 @@ import { UserRegisterComponent } from './components/user-register/user-register.
 import { LibraryComponent } from './components/library/library.component';
 import {CentralComponent} from './components/central/central.component';
 import {SettingsComponent} from './components/settings/settings.component';
+import { GameComponent } from './components/game/game.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -30,6 +32,10 @@ const routes: Routes = [
   {
     path: 'settings',
     component: SettingsComponent
+  },
+  {
+    path: 'game',
+    component: GameComponent
   }
 ];
 
