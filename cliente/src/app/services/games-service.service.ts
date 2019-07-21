@@ -27,15 +27,16 @@ export class GamesServiceService {
     return this.http.post(`${this.API}/games`, game);
   }
 
-  setDeleteGame(id: string){
-    return this.http.delete(`${this.API}/games/${id}`);
+  setDeleteGame(idg: string, nick: string){
+    return this.http.delete(`${this.API}/games/${idg}/${nick}`);
   }
 
-  /*
-  Aca ocurre un error, no me toma todo el put, me pregunto si lo mejor sera pasarle todo el GameUser y que funcione igual que el Add
-  setMaxScore(id: string, idg: string){
-    return this.http.put(`${this.API}/games/${id}/${idg}`);
+  setMaxScore(game: GameUser){
+    return this.http.post(`${this.API}/games`, game);
   }
-  */
+
+  getEveryGame(){
+    return this.http.get(`${this.API}/games`);
+  }
 
 }

@@ -8,7 +8,13 @@ class IndexRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', indexController_1.indexController.index);
+        this.router.get('/:id/0', indexController_1.indexController.getIDUser);
+        this.router.get('/:id/1', indexController_1.indexController.getIDGame);
+        this.router.get('/:id/2', indexController_1.indexController.getGame);
+        this.router.post('/', indexController_1.indexController.addNewGame);
+        this.router.delete('/:idg/:nick', indexController_1.indexController.deleteGame);
+        this.router.post('/', indexController_1.indexController.setScore);
+        this.router.get('/', indexController_1.indexController.getAllGames);
     }
 }
 const indexRoutes = new IndexRoutes();
