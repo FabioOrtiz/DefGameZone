@@ -28,7 +28,7 @@ class IndexController {
     getIDUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('SELECT id FROM user WHERE nick = ?', [id], function (err, result, fields) {
+            yield database_1.default.query('SELECT * FROM user WHERE nick = ?', [id], function (err, result, fields) {
                 if (err)
                     throw err;
                 res.json(result);
@@ -38,7 +38,7 @@ class IndexController {
     getIDGame(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('SELECT game_id FROM game_user WHERE user_id = ?', [id], function (err, result, fields) {
+            yield database_1.default.query('SELECT * FROM game_user WHERE user_id = ?', [id], function (err, result, fields) {
                 if (err)
                     throw err;
                 res.json(result);
