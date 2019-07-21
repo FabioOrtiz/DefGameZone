@@ -13,7 +13,7 @@ class IndexRoutes {
         this.router.get('/:id/2', indexController_1.indexController.getGame);
         this.router.post('/', indexController_1.indexController.addNewGame);
         this.router.delete('/:idg/:nick', indexController_1.indexController.deleteGame);
-        this.router.post('/', indexController_1.indexController.setScore);
+        this.router.post('/', indexController_1.indexController.setMaxScore);
         this.router.get('/', indexController_1.indexController.getAllGames);
     }
 }

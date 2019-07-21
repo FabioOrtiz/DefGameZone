@@ -23,7 +23,7 @@ class Server{
     }
 
     routes(): void{
-        this.app.use(indexRoutes);
+        this.app.use('/games', indexRoutes);
         this.app.use('/user',gamesRoutes);
     }
 

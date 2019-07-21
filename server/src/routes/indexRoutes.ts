@@ -11,7 +11,13 @@ class IndexRoutes{
     }
  
     config(): void{
-        this.router.get('/', indexController.index);
+        this.router.get('/:id/0', indexController.getIDUser);
+        this.router.get('/:id/1', indexController.getIDGame);
+        this.router.get('/:id/2', indexController.getGame);
+        this.router.post('/', indexController.addNewGame);
+        this.router.delete('/:idg/:nick', indexController.deleteGame);
+        this.router.post('/', indexController.setMaxScore);
+        this.router.get('/', indexController.getAllGames);
     }
 }
 

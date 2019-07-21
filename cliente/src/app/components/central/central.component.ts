@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesServiceService } from '../../services/games-service.service';
+
 @Component({
   selector: 'app-central',
   templateUrl: './central.component.html',
@@ -11,8 +12,12 @@ export class CentralComponent implements OnInit {
   
   constructor(private gameService: GamesServiceService) { }
 
-  ngOnInit() {}
-
-
-
+  ngOnInit() {
+    this.gameService.getEveryGame().subscribe(
+      res =>{
+        this.games=res;
+      },
+      err=>console.log("ERROR")
+    )
+  }
 }
