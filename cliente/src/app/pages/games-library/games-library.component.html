@@ -23,27 +23,30 @@
 <div class="container row">
     <div class="col s12 m7 l8">
         <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">
-            <li *ngFor="let game of games">
+            <li [value]="game_list" *ngFor="let game_list of games;">
+                <form>
+                    <input name="game_id" id="game_id" type="hidden" class="validate" value="{{ game_list.id }}">
+                </form>
                 <div class="collapsible-header"><i class="material-icons">games</i>
-                    <span class="uppercase">{{ game.name }}</span>
+                    <span class="uppercase">{{ game_list.name }}</span>
                 </div>
                 <div class="collapsible-body">
                     <div class="row">
-                        <img src="../assets/img/{{ game.name }}.png" alt="game {{ game.id }}" class="responsive-img">
+                        <img src="../assets/img/{{ game_list.name }}.png" alt="game {{ game_list.id }}" class="responsive-img">
                     </div>
                     <div class="row">
-                        <p>{{ game.description }}</p>
+                        <p>{{ game_list.description }}</p>
                     </div>
                     <!--
                     <div *ngIf="!show" class="row">
-                        <a href="/game/{{ game.name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
+                        <a href="/game/{{ game_list.name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
                     </div>
                     -->
                     <div class="row">
-                        <a href="/game/{{ game.name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
+                        <a href="/game/{{ game_list.name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
                     </div>
                     <div *ngIf="show" class="row center">
-                        <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons left">add</i></a>
+                        <a class="btn-floating btn-large waves-effect waves-light green" type="submit" (click)="save_game(game_list);"><i class="material-icons left">add</i></a>
                     </div>
                 </div>
             </li>

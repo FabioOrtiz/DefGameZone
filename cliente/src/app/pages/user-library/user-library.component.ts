@@ -55,6 +55,20 @@ export class UserLibraryComponent implements OnInit {
     );
     //console.log(this.games)
   }
+
+  delete_game(gamex: any){
+    console.log(this.IDs[0].id);
+    console.log(gamex[0].id);
+
+    this.gameService.setDeleteGame(gamex[0].id, this.IDs[0].id).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.error(err)
+    )
+
+    window.location.reload()
+  }
   /*
   open_game(game_name) {
     if(game_name){

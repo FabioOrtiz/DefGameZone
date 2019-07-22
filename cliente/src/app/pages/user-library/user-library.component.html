@@ -23,20 +23,20 @@
 <div class="container row">
     <div class="col s12 m7 l8">
         <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">
-            <li *ngFor="let game of games">
-                <div class="collapsible-header"><i class="material-icons">games</i><span class="uppercase">{{ game[0].name }}</span></div>
+            <li [value]="game_list" *ngFor="let game_list of games">
+                <div class="collapsible-header"><i class="material-icons">games</i><span class="uppercase">{{ game_list[0].name }}</span></div>
                 <div class="collapsible-body">
                     <div class="row">
-                        <img src="../assets/img/{{ game[0].name }}.png" alt="game {{ game[0].id }}" class="responsive-img">
+                        <img src="../assets/img/{{ game_list[0].name }}.png" alt="game {{ game_list[0].id }}" class="responsive-img">
                     </div>
                     <div class="row">
-                        <p>{{ game[0].description }}</p>
+                        <p>{{ game_list[0].description }}</p>
                     </div>
                     <div class="row">
-                        <a href="/game/{{ game[0].name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
+                        <a href="/game/{{ game_list[0].name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
                     </div>
                     <div class="row center">
-                        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons left">delete</i></a>
+                        <a class="btn-floating btn-large waves-effect waves-light red" type="submit" (click)="delete_game(game_list);"><i class="material-icons left">delete</i></a>
                     </div>
                 </div>
             </li>
