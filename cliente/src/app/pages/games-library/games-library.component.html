@@ -34,7 +34,12 @@
                     <div class="row">
                         <p>{{ game.description }}</p>
                     </div>
+                    <!--
                     <div *ngIf="!show" class="row">
+                        <a href="/game/{{ game.name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
+                    </div>
+                    -->
+                    <div class="row">
                         <a href="/game/{{ game.name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
                     </div>
                     <div *ngIf="show" class="row center">
