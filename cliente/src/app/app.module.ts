@@ -1,37 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTING } from './app.routes';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { UserRegisterComponent } from './components/user-register/user-register.component';
-import { GameListComponent } from './components/game-list/game-list.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { UsersService } from './services/users.service';
-import { LibraryComponent } from './components/library/library.component';
-import { CentralComponent } from './components/central/central.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { GameComponent} from './components/game/game.component';
+import { GameComponent} from './pages/game/game.component';
+import { HomeComponent } from './pages/home/home.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { GamesLibraryComponent } from './pages/games-library/games-library.component';
+import { UserLibraryComponent } from './pages/user-library/user-library.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { QuickactionbuttonComponent } from './components/quickactionbutton/quickactionbutton.component';
+
+import { MaterializeModule } from "angular2-materialize";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
-    UserRegisterComponent,
-    GameListComponent,
     LoginComponent,
-    LibraryComponent,
-    CentralComponent,
-    SettingsComponent,
-    GameComponent
+    GameComponent,
+    HomeComponent,
+    RegisterComponent,
+    GamesLibraryComponent,
+    UserLibraryComponent,
+    NavbarComponent,
+    QuickactionbuttonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule, 
-    FormsModule
+    FormsModule,
+    RouterModule,
+    RouterModule.forRoot(APP_ROUTING),
+    MaterializeModule
   ],
   providers: [
     UsersService
