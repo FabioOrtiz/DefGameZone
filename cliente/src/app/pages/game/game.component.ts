@@ -54,7 +54,7 @@ export class GameComponent implements OnInit {
       this.show_arkanoid_old = true;
       this.loadScript('../assets/games/arkanoid_old/juego_arkanoid.js');
 
-    } else if (this.direction == 'car_game') {
+    } /*else if (this.direction == 'car_game') {
 
       //console.log("car_game game");
       this.show_car_game = true;
@@ -65,7 +65,7 @@ export class GameComponent implements OnInit {
       this.loadScript('../assets/games/car_game/script/board.js');
       this.loadScript('../assets/games/car_game/script/board-objects.js');
 
-    } else if (this.direction == 'chicken') {
+    }*/ else if (this.direction == 'chicken') {
 
       //console.log("chicken game");
       this.show_chicken = true;

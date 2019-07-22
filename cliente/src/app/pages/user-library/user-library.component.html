@@ -22,6 +22,7 @@
 <br>
 <div class="container row">
     <div class="col s12 m7 l8">
+        <h3 class="center">Juegos de {{ direction }}</h3>
         <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">
             <li [value]="game_list" *ngFor="let game_list of games">
                 <div class="collapsible-header"><i class="material-icons">games</i><span class="uppercase">{{ game_list[0].name }}</span></div>
@@ -33,29 +34,37 @@
                         <p>{{ game_list[0].description }}</p>
                     </div>
                     <div class="row">
-                        <a href="/game/{{ game_list[0].name }}" class="btn-large waves-effect waves-light btn">Jugar</a>
-                    </div>
-                    <div class="row center">
-                        <a class="btn-floating btn-large waves-effect waves-light red" type="submit" (click)="delete_game(game_list);"><i class="material-icons left">delete</i></a>
+                        <div>
+                            <a href="/game/{{ game_list[0].name }}" class="btn-large waves-effect waves-light btn left">Jugar</a>
+                        </div>
+                        <div>
+                            <a class="btn-floating btn-large waves-effect waves-light right red" type="submit" (click)="delete_game(game_list);"><i class="material-icons left">delete</i></a>
+                        </div>
                     </div>
                 </div>
             </li>
         </ul>
-        <a routerLink="/games-library/{{direction}}" class=" waves-effect waves-light btn">Añadir nuevo juego</a>
+        <div class="center">
+            <a routerLink="/games-library/{{direction}}" class=" waves-effect waves-light btn">Añadir nuevo juego</a>
+        </div>
+
     </div>
     <div class="col m5 l4">
         <div class="card blue-grey darken-3">
             <div class="card-content white-text">
-                <span class="card-title">Juegos Recomendados
-                        </span>
+                <span class="card-title">Juegos Recomendados</span>
                 <span class="card-title">Penguin</span>
-                <img src="../assets/img/penguin.png" alt="game img" class="responsive-img">
-                <a href="/game/penguin" class="waves-effect waves-light btn">Jugar</a>
+                <div class="center">
+                    <img src="../assets/img/penguin.png" alt="game img" class="responsive-img">
+                    <a href="/game/penguin" class="waves-effect waves-light btn">Jugar</a>
+                </div>
             </div>
             <div class="card-content white-text">
                 <span class="card-title">Chicken</span>
-                <img src="../assets/img/chicken.png" alt="game img" class="responsive-img">
-                <a href="/game/chicken" class="waves-effect waves-light btn">Jugar</a>
+                <div class="center">
+                    <img src="../assets/img/chicken.png" alt="game img" class="responsive-img">
+                    <a href="/game/chicken" class="waves-effect waves-light btn">Jugar</a>
+                </div>
             </div>
         </div>
     </div>

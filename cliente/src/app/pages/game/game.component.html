@@ -18,8 +18,8 @@
         </div>
     </div>
 
-    <div *ngIf="show_car_game" onload="main();">
-        <canvas id="gameBoard" width="1450" height="620"></canvas>
+    <div *ngIf="show_car_game">
+        <canvas id="gameBoard" width="1450" height="620" onload="main();"></canvas>
         <button id="again" onclick="restart()">Again!</button>
 
         <div id="scoreContainer">
@@ -93,11 +93,11 @@
             <button id="iniciar">Iniciar</button>
         </section>
         <audio id="pierde">
-                            <source src="../assets/games/snake/sonidos/Fondo.ogg" type="audio/ogg">
-                            <source src="../assets/games/snake/sonidos/Fondo.mp3" type="audio/mpeg">
-                            <source src="../assets/games/snake/sonidos/Fondo.wav" type="audio/wav">
-                            Tu navegador no es compatible
-                        </audio>
+            <source src="../assets/games/snake/sonidos/Fondo.ogg" type="audio/ogg">
+            <source src="../assets/games/snake/sonidos/Fondo.mp3" type="audio/mpeg">
+            <source src="../assets/games/snake/sonidos/Fondo.wav" type="audio/wav">
+            Tu navegador no es compatible
+        </audio>
 
         <img id="abajo" src="../assets/games/snake/imagenes/snake.png" />
         <img id="arriba" src="../assets/games/snake/imagenes/snake.png" />
