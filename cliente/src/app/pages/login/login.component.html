@@ -25,21 +25,26 @@
     </div>
 </div>
 -->
-
+<br>
+<br>
 <div class="container">
     <div class="row center">
-        <form>
-            <div class="input-field">
-                <i class="material-icons prefix">account_circle</i>
-                <input name="nick" id="user" type="text" class="validate" [(ngModel)]="user.nick">
-                <label for="user">Usuario</label>
+        <div class="card blue-grey lighten-5">
+            <div class="card-content">
+                <form>
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input name="nick" id="user" type="text" class="validate" [(ngModel)]="user.nick">
+                        <label for="user">Usuario</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input name="password" id="password" type="password" class="validate" [(ngModel)]="user.password">
+                        <label for="password">Password</label>
+                    </div>
+                </form>
+                <button href="/user-library" id="send" type="submit" class="btn waves-effect waves-light submit-btn" (click)="checkRegister()">Iniciar Sesion</button>
             </div>
-            <div class="input-field">
-                <i class="material-icons prefix">vpn_key</i>
-                <input name="password" id="password" type="password" class="validate" [(ngModel)]="user.password">
-                <label for="password">Password</label>
-            </div>
-        </form>
-        <button href="/user-library" id="send" type="submit" class="btn waves-effect waves-light submit-btn" (click)="checkRegister()">Iniciar Sesion</button>
+        </div>
     </div>
 </div>
