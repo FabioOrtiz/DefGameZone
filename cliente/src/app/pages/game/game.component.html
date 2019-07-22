@@ -1,0 +1,108 @@
+<div class="center">
+
+    <div *ngIf="show_arkanoid">
+        <section>
+            <canvas id="myCanvas" width="480" height="320" style="background:url('../assets/games/arkanoid/Images/espacio.gif'), url('../assets/games/arkanoid/Images/fondo3.jpg');"></canvas>
+        </section>
+        <button onclick="reload()">Volver a jugar</button>
+    </div>
+
+    <div *ngIf="show_arkanoid_old">
+        <canvas id="canvas" style="width: 700px; height: 400px; background-image: url('../assets/games/arkanoid_old/Imagenes/fondo.jpg');"></canvas>
+        <div id="modelo">
+
+            <button id="inicio">
+                        <img src="../assets/games/arkanoid_old/Imagenes/jugar.jpg"/>
+                    </button>
+
+        </div>
+    </div>
+
+    <div *ngIf="show_car_game" onload="main();">
+        <canvas id="gameBoard" width="1450" height="620"></canvas>
+        <button id="again" onclick="restart()">Again!</button>
+
+        <div id="scoreContainer">
+            <div id="score">
+                0
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="show_chicken">
+        <section style="background: url('../assets/games/chicken/imagenes/trasparente.png');">
+            <canvas id="mi_canvas" width="640" height="480" style="background: url('../assets/games/chicken/imagenes/fondo.png');">
+                            Tu navegador no es compatible
+                        </canvas>
+        </section>
+        <section style="background: url('../assets/games/chicken/imagenes/trasparente.png');">
+            <div id="popup" style="display: none;">
+                <div class="content-popup">
+                    <div class="close">
+                        <a href="#" id="close"><img src="../assets/games/chicken/imagenes/close.png" /></a>
+                    </div>
+                    <div>
+                        <h2>Teclas de juego</h2>
+                        <img src="../assets/games/chicken/imagenes/teclado.png" />
+                        <h2>Creditos</h2>
+                        <p>Alejandro Paolo Daza Corredor</p>
+                        <p>UNIR</p>
+                        <p>Computación en el Cliente</p>
+                    </div>
+                </div>
+            </div>
+            <h1>La Gallina</h1>
+            <button id="instrucciones">Ver Instrucciones</button><br>
+            <button id="iniciar">Comenzar</button>
+        </section>
+        <audio id="pierde">
+                        <source src="../assets/games/chicken/sonidos/pierde_vida.mp3" type="audio/mpeg">
+                        Tu navegador no es compatible
+                    </audio>
+
+        <img id="abajo" src="../assets/games/chicken/imagenes/kika.png" />
+        <img id="arriba" src="../assets/games/chicken/imagenes/kika2.png" />
+        <img id="calaca_1" src="../assets/games/chicken/imagenes/calaca_child.png" />
+        <img id="calaca_2" src="../assets/games/chicken/imagenes/calaca_girl.png" />
+    </div>
+
+    <div *ngIf="show_snake">
+        <section style="background: url('../assets/games/snake/imagenes/trasparente.png');">
+            <canvas id="mi_canvas" width="640" height="480" style="background:url('../assets/games/snake/imagenes/fondo.jpg');">
+                                Tu navegador no es compatible
+                            </canvas>
+        </section>
+        <section style="background: url('../assets/games/snake/imagenes/trasparente.png');">
+            <div id="popup" style="display: none;">
+                <div class="content-popup">
+                    <div class="close">
+                        <a href="#" id="close"><img src="../assets/games/snake/imagenes/close.png" /></a>
+                    </div>
+                    <div>
+                        <h2>Teclas de juego</h2>
+                        <img src="../assets/games/snake/imagenes/teclado.png" />
+                        <h2>Creditos</h2>
+                        <p>Kevin Malaver</p>
+                        <p>Universidad Distrital</p>
+                        <p>Ingenieria de Sistemas</p>
+                    </div>
+                </div>
+            </div>
+            <h1>Snake</h1>
+            <button id="instrucciones">Ver Instrucciones</button><br>
+            <button id="iniciar">Iniciar</button>
+        </section>
+        <audio id="pierde">
+                            <source src="../assets/games/snake/sonidos/Fondo.ogg" type="audio/ogg">
+                            <source src="../assets/games/snake/sonidos/Fondo.mp3" type="audio/mpeg">
+                            <source src="../assets/games/snake/sonidos/Fondo.wav" type="audio/wav">
+                            Tu navegador no es compatible
+                        </audio>
+
+        <img id="abajo" src="../assets/games/snake/imagenes/snake.png" />
+        <img id="arriba" src="../assets/games/snake/imagenes/snake.png" />
+        <img id="salto" src="../assets/games/snake/imagenes/snake.png" />
+        <img id="sentado" src="../assets/games/snake/imagenes/snake.png" />
+        <img id="calaca_1" src="../assets/games/snake/imagenes/manzana.png" />
+    </div>
+</div>

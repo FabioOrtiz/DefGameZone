@@ -9,7 +9,6 @@ export class QuickactionbuttonComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
