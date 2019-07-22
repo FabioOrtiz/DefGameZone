@@ -63,6 +63,7 @@ export class UserLibraryComponent implements OnInit {
     this.gameService.setDeleteGame(gamex[0].id, this.IDs[0].id).subscribe(
       res => {
         console.log(res);
+        //this.router.navigate(['./user-library/', this.IDs[0].nick]);
       },
       err => console.error(err)
     )

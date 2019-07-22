@@ -20,3 +20,22 @@
         <div class="parallax" materialize="parallax"><img src="https://www.wallpaperflare.com/static/325/596/914/video-games-arcade-atari-retro-games-wallpaper.jpg" alt="Unsplashed background img 1"></div>
     </div>
 </div>
+<br>
+<br>
+<div class="container center">
+    <p class="flow-text">Bienvenido a GameZone, un pequeño lugar donde podras disfrutar de la mejor coleccion de juegos. Echa un vistazo!</p>
+    <div class="row">
+        <div class="col s12 m4 l4" *ngFor="let game_list of games;">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="../assets/img/{{ game_list.name }}.png" alt="game {{ game_list.id }}">
+
+                </div>
+                <div class="card-content">
+                    <a routerLink="/login" class="btn-floating waves-effect waves-light red right blue-grey darken-3"><i class="material-icons">chevron_right</i></a>
+                    <span class="card-title uppercase">{{ game_list.name }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
