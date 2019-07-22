@@ -1,4 +1,5 @@
 # DefGameZone
-Para que Materialize CSS funcione correctamente es necesario instalarlo mediante los siguientes comandos (desde la carpeta cliente)
+Para que Materialize CSS funcione correctamente es necesario instalarlo en la carpeta cliente
 npm install materialize-css --save
 npm install angular2-materialize --save
+
