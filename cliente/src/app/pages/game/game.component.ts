@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
   show_car_game: boolean = false;
   show_chicken: boolean = false;
   show_snake: boolean = false;
+  show_other: boolean = false;
 
   constructor(private router: Router) {
     const tree: UrlTree = router.parseUrl(this.router.url);
@@ -94,6 +95,8 @@ export class GameComponent implements OnInit {
       this.loadScript('../assets/games/snake/js/quica.js');
       this.loadScript('../assets/games/snake/js/script.js');
 
+    } else {
+      this.show_other = true;
     }
   }
 

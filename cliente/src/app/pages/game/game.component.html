@@ -105,9 +105,12 @@
         <img id="sentado" src="../assets/games/snake/imagenes/snake.png" />
         <img id="calaca_1" src="../assets/games/snake/imagenes/manzana.png" />
     </div>
-
-
-</div>
-<div class="container">
+    <div *ngIf="show_other">
+        <div class="card blue-grey lighten-5">
+            <div class="card-content">
+                <span class="card-title">Juego no encontrado</span>
+            </div>
+        </div>
+    </div>
     <a class="waves-effect waves-light btn" onclick="history.back()">Volver</a>
 </div>
