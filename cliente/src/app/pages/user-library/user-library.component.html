@@ -23,10 +23,10 @@
     <div class="col s12 m7 l8">
         <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">
             <li *ngFor="let game of games">
-                <div class="collapsible-header"><i class="material-icons">games</i>{{ game[0].name }}</div>
+                <div class="collapsible-header"><i class="material-icons">games</i><span class="uppercase">{{ game[0].name }}</span></div>
                 <div class="collapsible-body">
                     <div class="row">
-                        <img src="" alt="game {{ game[0].id }}">
+                        <img src="../assets/img/{{ game[0].name }}.png" alt="game {{ game[0].id }}" class="responsive-img">
                     </div>
                     <div class="row">
                         <p>{{ game[0].description }}</p>
