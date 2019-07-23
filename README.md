@@ -16,6 +16,7 @@ npm run dev
   
 Luego se iniciara el proyecto de angular, se dirigira a la carpeta cliente, allí mediante la consola de comandos ejecutara:  
 npm install  
+  
 Posteriormente se instalara *Materialize CSS*, esto con el fin de que la página funcione correctamente, se ejecutara:  
 npm install materialize-css --save  
 npm install angular2-materialize --save  
@@ -23,4 +24,4 @@ npm install angular2-materialize --save
 Y por ultimo se iniciara el proyecto:  
 ng serve  
   
-Ahora para ver la página web se dirigira a http://localhost:4200/
+Ahora podra ver la página web en http://localhost:4200/
