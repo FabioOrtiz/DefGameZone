@@ -44,8 +44,11 @@
                     </div>
                     -->
                     <div class="row">
-                        <div>
+                        <div *ngIf="!show">
                             <a href="/game/{{ game_list.name }}" class="btn-large waves-effect waves-light left btn">Jugar</a>
+                        </div>
+                        <div *ngIf="show">
+                            <a href="/game/{{ game_list.name }}" class="btn-large waves-effect waves-light left btn">Probar</a>
                         </div>
                         <div *ngIf="show">
                             <a class="btn-floating btn-large waves-effect waves-light green right" type="submit" (click)="save_game(game_list);"><i class="material-icons left">add</i></a>
@@ -60,7 +63,7 @@
 
     </div>
     <div class="col m5 l4">
-        <div class="card blue-grey darken-3">
+        <div class="card blue-grey darken-2">
             <div class="card-content white-text">
                 <span class="card-title">Juegos Recomendados</span>
                 <span class="card-title">Penguin</span>

@@ -133,3 +133,8 @@ function draw() {
         noLoop();
     }
 }
+
+function getScore() {
+    console.log(points);
+    return points;
+}

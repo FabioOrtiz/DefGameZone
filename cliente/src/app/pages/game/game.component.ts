@@ -12,11 +12,20 @@ import { UrlSegmentGroup } from '@angular/router';
 export class GameComponent implements OnInit {
 
   direction: any;
+  show_penguin: boolean = false;
   show_arkanoid: boolean = false;
   show_arkanoid_old: boolean = false;
   show_car_game: boolean = false;
   show_chicken: boolean = false;
   show_snake: boolean = false;
+
+  show_buscaminas: boolean = false;
+  show_gallinita: boolean = false;
+  show_chicken_road: boolean = false;
+  show_pollhor: boolean = false;
+  show_pinball: boolean = false;
+  show_twicecard: boolean = false;
+
   show_other: boolean = false;
 
   constructor(private router: Router) {
@@ -31,6 +40,7 @@ export class GameComponent implements OnInit {
     if (this.direction == 'penguin') {
 
       //console.log("penguin game");
+      this.show_penguin = true;
       this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js');
       this.loadScript('../assets/games/penguin/sketch.js');
       this.loadScript('../assets/games/penguin/board.js');
@@ -95,9 +105,61 @@ export class GameComponent implements OnInit {
       this.loadScript('../assets/games/snake/js/quica.js');
       this.loadScript('../assets/games/snake/js/script.js');
 
+    } else if (this.direction == 'buscaminas'){
+
+      this.show_buscaminas = true;
+      this.loadScript('../assets/games/Buscaminas/scripts/controlador.js');
+      this.loadScript('../assets/games/Buscaminas/scripts/logica.js');
+      this.loadScript('../assets/games/Buscaminas/scripts/main.js');
+      this.loadScript('../assets/games/Buscaminas/scripts/tiempo.js');
+      //this.loadScript('../assets/games/Buscaminas/scripts/Todo.js');
+
+    } else if (this.direction == 'calavera'){
+
+      this.loadScript('../assets/games/Calavera/js/juego.js');
+
+    } else if (this.direction == 'gallinita'){
+
+      this.show_gallinita = true;
+      this.loadScript('../assets/games/Gallinita/js/jquery-1.11.0.min.js');
+      this.loadScript('../assets/games/Gallinita/js/carro.js');
+      this.loadScript('../assets/games/Gallinita/js/gallina.js');
+      this.loadScript('../assets/games/Gallinita/js/maiz.js');
+      this.loadScript('../assets/games/Gallinita/js/script.js');
+
+    } else if (this.direction == 'chicken_road'){
+
+      this.show_chicken_road = true;
+      this.loadScript('../assets/games/Gallinita1/js/jquery-1.11.0.min.js');
+      this.loadScript('../assets/games/Gallinita1/js/autos.js');
+      this.loadScript('../assets/games/Gallinita1/js/pollo.js');
+      this.loadScript('../assets/games/Gallinita1/js/script.js');
+
+    } else if (this.direction == 'pollhor'){
+
+      this.show_pollhor = true;
+      this.loadScript('../assets/games/Gallinita2/js/jquery-1.11.0.min.js');
+      this.loadScript('../assets/games/Gallinita2/js/calaca.js');
+      this.loadScript('../assets/games/Gallinita2/js/quica.js');
+      this.loadScript('../assets/games/Gallinita2/js/script.js');
+
+    } else if (this.direction == 'pinball'){
+
+      this.show_pinball = true;
+      this.loadScript('../assets/games/Pinball/logica.js');
+
+    } else if (this.direction == 'twicecard'){
+
+      this.show_twicecard = true;
+      this.loadScript('../assets/games/TwiceCard/script.js');
+
     } else {
       this.show_other = true;
     }
+  }
+
+  score(points: number){
+
   }
 
   public loadScript(url: string) {
